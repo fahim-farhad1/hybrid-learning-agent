@@ -397,7 +397,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  LearningGoal: 'LearningGoal',
+  LearningPhase: 'LearningPhase'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -413,7 +415,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user"
+    modelProps: "user" | "learningGoal" | "learningPhase"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -491,6 +493,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    LearningGoal: {
+      payload: Prisma.$LearningGoalPayload<ExtArgs>
+      fields: Prisma.LearningGoalFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LearningGoalFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LearningGoalFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>
+        }
+        findFirst: {
+          args: Prisma.LearningGoalFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LearningGoalFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>
+        }
+        findMany: {
+          args: Prisma.LearningGoalFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>[]
+        }
+        create: {
+          args: Prisma.LearningGoalCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>
+        }
+        createMany: {
+          args: Prisma.LearningGoalCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LearningGoalCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>[]
+        }
+        delete: {
+          args: Prisma.LearningGoalDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>
+        }
+        update: {
+          args: Prisma.LearningGoalUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>
+        }
+        deleteMany: {
+          args: Prisma.LearningGoalDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LearningGoalUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LearningGoalUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>[]
+        }
+        upsert: {
+          args: Prisma.LearningGoalUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningGoalPayload>
+        }
+        aggregate: {
+          args: Prisma.LearningGoalAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLearningGoal>
+        }
+        groupBy: {
+          args: Prisma.LearningGoalGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LearningGoalGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LearningGoalCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LearningGoalCountAggregateOutputType> | number
+        }
+      }
+    }
+    LearningPhase: {
+      payload: Prisma.$LearningPhasePayload<ExtArgs>
+      fields: Prisma.LearningPhaseFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LearningPhaseFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LearningPhaseFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>
+        }
+        findFirst: {
+          args: Prisma.LearningPhaseFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LearningPhaseFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>
+        }
+        findMany: {
+          args: Prisma.LearningPhaseFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>[]
+        }
+        create: {
+          args: Prisma.LearningPhaseCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>
+        }
+        createMany: {
+          args: Prisma.LearningPhaseCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LearningPhaseCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>[]
+        }
+        delete: {
+          args: Prisma.LearningPhaseDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>
+        }
+        update: {
+          args: Prisma.LearningPhaseUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>
+        }
+        deleteMany: {
+          args: Prisma.LearningPhaseDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LearningPhaseUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LearningPhaseUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>[]
+        }
+        upsert: {
+          args: Prisma.LearningPhaseUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LearningPhasePayload>
+        }
+        aggregate: {
+          args: Prisma.LearningPhaseAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLearningPhase>
+        }
+        groupBy: {
+          args: Prisma.LearningPhaseGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LearningPhaseGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LearningPhaseCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LearningPhaseCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -541,6 +691,38 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const LearningGoalScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  status: 'status',
+  startDate: 'startDate',
+  targetDate: 'targetDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+} as const
+
+export type LearningGoalScalarFieldEnum = (typeof LearningGoalScalarFieldEnum)[keyof typeof LearningGoalScalarFieldEnum]
+
+
+export const LearningPhaseScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  sequence: 'sequence',
+  status: 'status',
+  startDate: 'startDate',
+  targetDate: 'targetDate',
+  completedAt: 'completedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  goalId: 'goalId'
+} as const
+
+export type LearningPhaseScalarFieldEnum = (typeof LearningPhaseScalarFieldEnum)[keyof typeof LearningPhaseScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -555,6 +737,14 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 
@@ -592,6 +782,20 @@ export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
 
 
 /**
+ * Reference to a field of type 'GoalStatus'
+ */
+export type EnumGoalStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GoalStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'GoalStatus[]'
+ */
+export type ListEnumGoalStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GoalStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -602,6 +806,34 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'PhaseStatus'
+ */
+export type EnumPhaseStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PhaseStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'PhaseStatus[]'
+ */
+export type ListEnumPhaseStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PhaseStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
 /**
@@ -756,6 +988,8 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  learningGoal?: Prisma.LearningGoalOmit
+  learningPhase?: Prisma.LearningPhaseOmit
 }
 
 /* Types for Logging */

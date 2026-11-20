@@ -51,7 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  LearningGoal: 'LearningGoal',
+  LearningPhase: 'LearningPhase'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -81,6 +83,38 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const LearningGoalScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  status: 'status',
+  startDate: 'startDate',
+  targetDate: 'targetDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+} as const
+
+export type LearningGoalScalarFieldEnum = (typeof LearningGoalScalarFieldEnum)[keyof typeof LearningGoalScalarFieldEnum]
+
+
+export const LearningPhaseScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  sequence: 'sequence',
+  status: 'status',
+  startDate: 'startDate',
+  targetDate: 'targetDate',
+  completedAt: 'completedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  goalId: 'goalId'
+} as const
+
+export type LearningPhaseScalarFieldEnum = (typeof LearningPhaseScalarFieldEnum)[keyof typeof LearningPhaseScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -95,4 +129,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

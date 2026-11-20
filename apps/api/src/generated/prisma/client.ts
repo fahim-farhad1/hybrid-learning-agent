@@ -46,3 +46,13 @@ export { Prisma }
  * 
  */
 export type User = Prisma.UserModel
+/**
+ * Model LearningGoal
+ * 
+ */
+export type LearningGoal = Prisma.LearningGoalModel
+/**
+ * Model LearningPhase
+ * 
+ */
+export type LearningPhase = Prisma.LearningPhaseModel

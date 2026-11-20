@@ -13,4 +13,52 @@ model User {
   email     String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  learningGoals LearningGoal[]
 }
+
+enum GoalStatus {
+  ACTIVE
+  COMPLETED
+  PAUSED
+}
+
+enum PhaseStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  PAUSED
+}
+
+model LearningGoal {
+  id          String       @id @default(uuid())
+  title       String
+  description String?
+  status      GoalStatus   @default(ACTIVE)
+  startDate   DateTime     @default(now())
+  targetDate  DateTime?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  phases      LearningPhase[]
+}
+
+model LearningPhase {
+  id          String      @id @default(uuid())
+  title       String
+  description String?
+  sequence    Int
+  status      PhaseStatus @default(NOT_STARTED)
+  startDate   DateTime?
+  targetDate  DateTime?
+  completedAt DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  goalId      String
+  goal        LearningGoal @relation(fields: [goalId], references: [id])
+
+  @@unique([goalId, sequence])
+}
+

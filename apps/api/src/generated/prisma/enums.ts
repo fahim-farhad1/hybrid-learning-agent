@@ -9,7 +9,20 @@
 * 🟢 You can import this file directly.
 */
 
+export const GoalStatus = {
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED',
+  PAUSED: 'PAUSED'
+} as const
+
+export type GoalStatus = (typeof GoalStatus)[keyof typeof GoalStatus]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const PhaseStatus = {
+  NOT_STARTED: 'NOT_STARTED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+  PAUSED: 'PAUSED'
+} as const
+
+export type PhaseStatus = (typeof PhaseStatus)[keyof typeof PhaseStatus]
