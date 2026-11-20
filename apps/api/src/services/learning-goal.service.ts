@@ -1,6 +1,7 @@
 
 import { prisma } from "../lib/prisma.js";
 import type { CreateLearningGoalInput } from "../schemas/learning-goal.schema.js";
+import { AppError } from "../utils/app-error.js";
 
 export const createLearningGoal = async (
   data: CreateLearningGoalInput,
@@ -12,7 +13,7 @@ export const createLearningGoal = async (
   });
 
   if (!user) {
-    throw new Error("Personal user profile not found");
+    throw new AppError(404, "Personal user profile not found");
   }
 
   return prisma.learningGoal.create({
